@@ -89,33 +89,40 @@ btnEqual.addEventListener("click", function (e) {
         }
         // calculate the math
         while (calculatorArray.length > 1) {
+            let index;
             // Finding mutiply operator
-            let index = calculatorArray.indexOf("x");
-            if (index != -1) {
-                handleNewCalculation("x", index)
+            // Finding divide operator
+            let multiplyIndex = calculatorArray.indexOf("x");
+            let divideIndex = calculatorArray.indexOf("/");
+            if (multiplyIndex != -1 || divideIndex != -1) {
+                console.log("mutiplyindex: " + multiplyIndex, "divide index: " + divideIndex);
+                let operator = "/";
+                index = divideIndex;
+                if (((multiplyIndex < index) && multiplyIndex != -1) || index == -1) {
+                    index = multiplyIndex;
+                    operator = "x";
+                    console.log("123");
+                }
+                console.log(operator, index);
+                handleNewCalculation(operator, index);
+
             }
             else {
-                // Finding divide operator
-                index = calculatorArray.indexOf("/");
+                // Finding add operator
+                index = calculatorArray.indexOf("+");
                 if (index != -1) {
-                    handleNewCalculation("/", index)
+                    handleNewCalculation("+", index)
                 }
                 else {
-                    // Finding add operator
-                    index = calculatorArray.indexOf("+");
+                    // Finding substract operator
+                    index = calculatorArray.indexOf("-");
                     if (index != -1) {
-                        handleNewCalculation("+", index)
-                    }
-                    else {
-                        // Finding substract operator
-                        index = calculatorArray.indexOf("-");
-                        if (index != -1) {
-                            handleNewCalculation("-", index)
-                        }
+                        handleNewCalculation("-", index)
                     }
                 }
             }
         }
+        // }
 
         display.innerHTML += `<br /> = <span class="final-result">${calculatorArray[0].toLocaleString()}</span>`;
         // reset everything
