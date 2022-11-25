@@ -1,0 +1,45 @@
+main {
+    margin: 20px auto;
+    width: 400px;
+}
+
+main .border-element {
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 14pt;
+}
+
+.result-container {
+    margin-bottom: 20px;
+    text-align: right;
+    overflow-wrap: break-word;
+}
+
+.calculator-body {
+    position: relative;
+}
+
+.element-container {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(auto, auto));
+    gap: 20px;
+    width: 100%;
+}
+
+.element {
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+.other-function {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 20px;
+}
+
+.final-result {
+    font-weight: bold;
+}

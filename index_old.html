@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function handleSubmit() {
+        let checkbox = document.getElementById("checkbox_test");
+        alert("Helloooooo!!! " + (checkbox.checked ? "checked" : "nooooo"));
+    }
+</script>
+
+<body>
+    <main>
+        <form action="javascript:handleSubmit()" method="post" autocomplete="off">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Your username" tabindex="1" autofocus>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your email" tabindex="2">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Your password" tabindex="4">
+            </div>
+            <div>
+                <label for="phone">Phone</label>
+                <input type="color" id="phone" placeholder="Your phone" tabindex="3">
+            </div>
+            <div>
+                <label for="checkbox_test">Check me please: </label>
+                <input type="checkbox" id="checkbox_test" name="checkboxTest">
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
